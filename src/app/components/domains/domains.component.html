@@ -1,0 +1,34 @@
+<div class="mdl-grid">
+    <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <p>Lista de Domínios</p>
+    </div>
+    <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="mdl-data-table__cell--non-numeric">Domínio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let domain of domainList">
+                    <td>{{domain.id}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{domain.name}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        <span>21-25 de 25</span>
+                        <button class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">keyboard_arrow_left</i>
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">keyboard_arrow_right</i>
+                        </button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
