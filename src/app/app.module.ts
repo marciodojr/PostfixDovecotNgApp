@@ -11,6 +11,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DomainsComponent } from './components/domains/domains.component';
 import { EmailsComponent } from './components/emails/emails.component';
 import { HomeComponent } from './components/home/home.component';
+import { ApiService } from './services/api.service';
+import { DomainService } from './services/domain.service';
+import { EmailService } from './services/email.service';
+
+import { HttpModule } from '@angular/http';
+
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -34,9 +40,10 @@ const appRoutes: Routes = [
         RouterModule.forRoot(
             appRoutes,
             { enableTracing: true } // <-- debugging purposes only
-        )
+        ),
+        HttpModule
     ],
-    providers: [],
+    providers: [ApiService, DomainService, EmailService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,19 +8,19 @@
                 <tr>
                     <th>#</th>
                     <th class="mdl-data-table__cell--non-numeric">Email</th>
-                    <th class="mdl-data-table__cell--non-numeric">Redireciona para</th>
+                    <!-- <th class="mdl-data-table__cell--non-numeric">Redireciona para</th> -->
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let e of emailList">
                     <td>{{e.id}}</td>
                     <td class="mdl-data-table__cell--non-numeric">{{e.email}}</td>
-                    <td class="mdl-data-table__cell--non-numeric">{{forwardToString(e.forwardTo)}}</td>
+                    <!-- <td class="mdl-data-table__cell--non-numeric">{{forwardToString(e.forwardTo)}}</td> -->
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="2">
                         <span>21-25 de 25</span>
                         <button class="mdl-button mdl-js-button mdl-button--icon">
                             <i class="material-icons">keyboard_arrow_left</i>

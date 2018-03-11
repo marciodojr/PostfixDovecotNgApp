@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomainService } from '../../services/domain.service';
 
 @Component({
     selector: 'app-domains',
@@ -7,29 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DomainsComponent implements OnInit {
 
-    private domainList = [
-        {
-            id: 1,
-            name: 'domain.com'
-        },
-        {
-            id: 2,
-            name: 'anotherdomain.com'
-        },
-        {
-            id: 3,
-            name: 'domainxd.com'
-        },
-        {
-            id: 4,
-            name: 'arrrghdomain.com'
-        }
-    ];
+    private domainList = [];
 
 
-    constructor() { }
+    constructor(private dService: DomainService) {
+
+    }
 
     ngOnInit() {
+        this.getDomains(0, 10);
+    }
+
+    getDomains(startAt, number) {
+        this.dService
+            .getAll(startAt, number)
+            .subscribe((dList) => { this.domainList = dList.domains; });
     }
 
 }
